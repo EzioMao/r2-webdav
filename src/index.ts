@@ -88,7 +88,7 @@ function fromR2Object(object: R2Object | null | undefined): DavProperties {
 
 function make_resource_path(request: Request): string {
 	let path = new URL(request.url).pathname.slice(1);
-	path = path.endsWith('/') ? path.slice(0, -1) : path;
+	path = path.endsWith('webdav/') ? path.slice(0, -7) : path;
 	return path;
 }
 
